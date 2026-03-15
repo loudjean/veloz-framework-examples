@@ -13,13 +13,26 @@
       "root": ".",
       "branch": "main",
       "build": {
-        "command": "npm run build"
+        "command": "npm run build",
+        "nodeVersion": "20",
+        "packageManager": "auto"
       },
       "runtime": {
         "command": "npm run start",
         "port": 3000
       }
+    },
+    "veloz-framework-examples-new": {
+      "id": "svc_GqJojK1X6CWj",
+      "name": "veloz-framework-examples-new",
+      "type": "web",
+      "root": ".",
+      "branch": "main",
+      "runtime": {
+        "port": 3000
+      }
     }
   },
-  "created": "2026-03-15T04:47:33.751Z"
+  "created": "2026-03-15T04:47:33.751Z",
+  "updated": "2026-03-15T04:49:20.930Z"
 }

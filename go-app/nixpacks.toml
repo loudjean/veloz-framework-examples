@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["go", "gcc"]
+
+[phases.build]
+cmds = ["CGO_ENABLED=0 go build -o out"]
+
+[start]
+cmd = "./out"
