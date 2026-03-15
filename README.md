@@ -1,6 +1,6 @@
 # Veloz Framework Examples
 
-Testing various frameworks and edge cases with Veloz deploy.
+Comprehensive testing of frameworks, runtimes, and binaries with Veloz deploy.
 
 ## JavaScript/TypeScript Frameworks
 
@@ -39,6 +39,22 @@ Testing various frameworks and edge cases with Veloz deploy.
 | Elixir | Plug | ⏳ | Cowboy |
 | PHP | Native | ⏳ | PHP 8.1+ |
 
+## Binary Tests (Nixpacks)
+
+| Binary | Use Case | Status | Notes |
+|--------|----------|--------|-------|
+| Playwright | Browser automation | ⏳ | Chromium |
+| Puppeteer | Browser automation | ⏳ | Chrome |
+| FFmpeg | Video/audio processing | ⏳ | Full build |
+| Whisper | Speech-to-text | ⏳ | OpenAI model |
+| ImageMagick | Image processing | ⏳ | convert/mogrify |
+| GraphicsMagick | Image processing | ⏳ | gm command |
+| yt-dlp | Video download | ⏳ | With ffmpeg |
+| wkhtmltopdf | HTML to PDF | ⏳ | Headless |
+| Pandoc | Document conversion | ⏳ | With LaTeX |
+| Tesseract | OCR | ⏳ | eng + por langs |
+| SQLite | Database | ⏳ | better-sqlite3 |
+
 ## Special Cases
 
 | Example | Type | Status | Notes |
@@ -52,8 +68,50 @@ Testing various frameworks and edge cases with Veloz deploy.
 | Example | Status | Notes |
 |---------|--------|-------|
 | Monorepo (Turborepo) | ⏳ | Workspace deploy |
-| Custom Nixpacks | ⏳ | ffmpeg + imagemagick |
-| Heavy Deps | ⏳ | Sharp (native bindings) |
+| Custom Nixpacks | ⏳ | System packages |
+| Heavy Deps | ⏳ | Native bindings (sharp) |
+
+## Directory Structure
+
+```
+veloz-framework-examples/
+├── nextjs-app/
+├── vue-app/
+├── svelte-app/
+├── sveltekit-app/
+├── nuxt-app/
+├── solid-app/
+├── astro-app/
+├── hono-app/
+├── express-app/
+├── fastify-app/
+├── deno-app/
+├── bun-app/
+├── go-app/
+├── rust-axum/
+├── python-fastapi/
+├── elixir-app/
+├── php-app/
+├── binaries/
+│   ├── playwright-test/
+│   ├── puppeteer-test/
+│   ├── ffmpeg-test/
+│   ├── whisper-test/
+│   ├── imagemagick-test/
+│   ├── graphicsmagick-test/
+│   ├── ytdlp-test/
+│   ├── wkhtmltopdf-test/
+│   ├── pandoc-test/
+│   ├── tesseract-test/
+│   └── sqlite-test/
+├── edge-cases/
+│   ├── monorepo-turborepo/
+│   ├── custom-nixpacks/
+│   └── heavy-deps/
+├── worker-example/
+├── volume-test/
+└── static-site/
+```
 
 ## Deploy Commands
 
@@ -69,12 +127,12 @@ veloz deploy -y
 # Web apps
 curl https://<app-url>.veloz.app
 
-# API apps
+# API apps  
 curl https://<app-url>.veloz.app/health
 
-# Volume test
-curl -X POST https://<app-url>.veloz.app/increment
-curl https://<app-url>.veloz.app
+# Binary tests
+curl "https://ffmpeg-test.veloz.app/probe?url=https://example.com/video.mp4"
+curl "https://tesseract-test.veloz.app/ocr?url=https://example.com/image.png"
 ```
 
 ## Issues Found

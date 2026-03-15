@@ -1,0 +1,5 @@
+[phases.setup]
+nixPkgs = ["ffmpeg-full"]
+
+[start]
+cmd = "node index.js"
