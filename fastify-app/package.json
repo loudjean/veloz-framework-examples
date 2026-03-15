@@ -1,0 +1,11 @@
+{
+  "name": "fastify-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "fastify": "^5.0.0"
+  }
+}
