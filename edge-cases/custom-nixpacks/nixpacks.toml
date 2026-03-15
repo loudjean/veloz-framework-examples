@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["ffmpeg", "imagemagick"]
+
+[phases.build]
+cmds = ["echo 'Custom nixpacks build'"]
+
+[start]
+cmd = "node index.js"

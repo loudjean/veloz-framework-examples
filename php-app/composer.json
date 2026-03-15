@@ -1,0 +1,7 @@
+{
+    "name": "veloz/php-app",
+    "description": "Minimal PHP app for Veloz",
+    "require": {
+        "php": ">=8.1"
+    }
+}
