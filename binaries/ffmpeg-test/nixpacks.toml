@@ -1,5 +1,11 @@
 [phases.setup]
-nixPkgs = ["ffmpeg-full"]
+nixPkgs = ["nodejs_20", "ffmpeg-full"]
+
+[phases.install]
+cmds = ["npm ci"]
+
+[phases.build]
+cmds = ["echo 'No build needed'"]
 
 [start]
 cmd = "node index.js"
