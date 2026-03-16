@@ -116,8 +116,25 @@
       }
     },
     "vue-app": {
-      "id": "svc_2o0GFNnyg2m5",
+      "id": "svc_DoDJ5kC0ZJWN",
       "name": "vue-app",
+      "type": "static",
+      "root": ".",
+      "branch": "main",
+      "build": {
+        "command": "npm run build",
+        "nodeVersion": "20",
+        "packageManager": "auto",
+        "outputDir": "dist"
+      },
+      "runtime": {
+        "port": 3000,
+        "fsGroup": 1001
+      }
+    },
+    "vue-app-2": {
+      "id": "svc_x687KLBjFjvO",
+      "name": "vue-app-2",
       "type": "static",
       "root": ".",
       "branch": "main",
@@ -131,5 +148,5 @@
     }
   },
   "created": "2026-03-16T23:18:44.160Z",
-  "updated": "2026-03-16T23:57:06.901Z"
+  "updated": "2026-03-16T23:59:28.713Z"
 }
