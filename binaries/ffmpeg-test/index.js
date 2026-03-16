@@ -1,7 +1,6 @@
-import express from "express";
-import { execSync, spawn } from "child_process";
-import { createWriteStream, unlinkSync, readFileSync } from "fs";
-import { pipeline } from "stream/promises";
+const express = require("express");
+const { execSync } = require("child_process");
+const { readFileSync, unlinkSync } = require("fs");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -10,7 +9,9 @@ const port = process.env.PORT || 3000;
 let ffmpegVersion = "not found";
 try {
   ffmpegVersion = execSync("ffmpeg -version 2>&1 | head -1").toString().trim();
-} catch {}
+} catch (e) {
+  console.error("FFmpeg check failed:", e.message);
+}
 
 app.get("/", (req, res) => {
   res.json({
@@ -30,32 +31,10 @@ app.get("/probe", async (req, res) => {
   
   try {
     const result = execSync(
-      \`ffprobe -v quiet -print_format json -show_format -show_streams "\${url}"\`,
+      `ffprobe -v quiet -print_format json -show_format -show_streams "${url}"`,
       { timeout: 30000 }
     ).toString();
     res.json(JSON.parse(result));
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-app.get("/convert", async (req, res) => {
-  const url = req.query.url;
-  const format = req.query.format || "mp3";
-  if (!url) return res.status(400).json({ error: "url required" });
-  
-  try {
-    const outputFile = \`/tmp/output.\${format}\`;
-    execSync(
-      \`ffmpeg -y -i "\${url}" -t 10 -q:a 2 "\${outputFile}"\`,
-      { timeout: 60000 }
-    );
-    
-    const data = readFileSync(outputFile);
-    unlinkSync(outputFile);
-    
-    res.set("Content-Type", \`audio/\${format}\`);
-    res.send(data);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -66,6 +45,6 @@ app.get("/health", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(\`FFmpeg server on port \${port}\`);
-  console.log(\`FFmpeg: \${ffmpegVersion}\`);
+  console.log(`FFmpeg server on port ${port}`);
+  console.log(`FFmpeg: ${ffmpegVersion}`);
 });
