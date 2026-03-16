@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["pandoc", "texlive.combined.scheme-small"]
+nixPkgs = ["nodejs_20", "npm-9_x", "pandoc"]
 
 [start]
 cmd = "node index.js"

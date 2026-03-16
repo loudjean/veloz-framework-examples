@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["tesseract", "tesseract.langs.eng", "tesseract.langs.por"]
+nixPkgs = ["nodejs_20", "npm-9_x", "tesseract", "curl"]
 
 [start]
 cmd = "node index.js"

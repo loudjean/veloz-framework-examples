@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["nodejs_20", "npm-9_x", "yt-dlp"]
+nixPkgs = ["nodejs_20", "npm-9_x", "python3"]
 
 [start]
 cmd = "node index.js"
