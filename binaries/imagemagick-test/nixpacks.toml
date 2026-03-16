@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["imagemagick"]
+nixPkgs = ["nodejs_20", "npm-9_x", "imagemagick"]
 
 [start]
 cmd = "node index.js"
