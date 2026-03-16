@@ -41,9 +41,8 @@ Testing various frameworks and binaries with [Veloz](https://onveloz.com) deploy
 
 ## Key Learnings
 
-### 1. ESM Causes Startup Crashes
-Apps with `"type": "module"` in package.json crash on startup.
-**Fix**: Use CommonJS (`require()`) instead.
+### 1. ESM Works ✅
+Apps with `"type": "module"` work fine. No need for CommonJS.
 
 ### 2. Custom Binaries Need Node Explicitly
 When using custom `nixPkgs`, include Node:
