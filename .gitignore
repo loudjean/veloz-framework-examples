@@ -12,5 +12,4 @@ build/
 .env
 .env.*
 package-lock.json
-veloz.json
 target/
