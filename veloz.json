@@ -260,10 +260,43 @@
       "root": ".",
       "branch": "main",
       "runtime": {
+        "port": 3000,
+        "fsGroup": 1001
+      }
+    },
+    "elixir-app-2": {
+      "id": "svc_xawmPPFoeyZL",
+      "name": "elixir-app-2",
+      "type": "web",
+      "root": ".",
+      "branch": "main",
+      "runtime": {
+        "port": 3000,
+        "fsGroup": 1001
+      }
+    },
+    "php-app": {
+      "id": "svc_IqUFmeEebBs8",
+      "name": "php-app",
+      "type": "web",
+      "root": ".",
+      "branch": "main",
+      "runtime": {
+        "port": 3000,
+        "fsGroup": 1001
+      }
+    },
+    "php-app-2": {
+      "id": "svc_BXJk8U_NgEbT",
+      "name": "php-app-2",
+      "type": "web",
+      "root": ".",
+      "branch": "main",
+      "runtime": {
         "port": 3000
       }
     }
   },
   "created": "2026-03-16T23:18:44.160Z",
-  "updated": "2026-03-17T02:00:39.302Z"
+  "updated": "2026-03-17T02:08:23.195Z"
 }
