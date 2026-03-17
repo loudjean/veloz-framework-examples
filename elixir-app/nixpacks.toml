@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ["elixir", "erlang", "gcc"]
+
+[phases.install]
+cmds = ["mix local.hex --force", "mix local.rebar --force", "mix deps.get"]
+
+[phases.build]
+cmds = ["MIX_ENV=prod mix compile"]
+
+[start]
+cmd = "MIX_ENV=prod mix run --no-halt"

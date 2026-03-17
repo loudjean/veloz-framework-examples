@@ -1,0 +1,13 @@
+{
+  "type": "web",
+  "volumes": [
+    {
+      "name": "data",
+      "mountPath": "/data",
+      "size": "1Gi"
+    }
+  ],
+  "env": {
+    "DATA_DIR": "/data"
+  }
+}
