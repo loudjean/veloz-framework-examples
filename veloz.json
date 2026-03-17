@@ -140,13 +140,100 @@
       "branch": "main",
       "build": {
         "command": "npm run build",
+        "nodeVersion": "20",
+        "packageManager": "auto",
         "outputDir": "dist"
       },
       "runtime": {
+        "port": 3000,
+        "fsGroup": 1001
+      }
+    },
+    "vue-app-3": {
+      "id": "svc_ceJzRy4FW2nH",
+      "name": "vue-app-3",
+      "type": "static",
+      "root": ".",
+      "branch": "main",
+      "build": {
+        "command": "npm run build",
+        "nodeVersion": "20",
+        "packageManager": "auto",
+        "outputDir": "dist"
+      },
+      "runtime": {
+        "port": 3000,
+        "fsGroup": 1001
+      }
+    },
+    "svelte-app": {
+      "id": "svc_ExnlIlnNx1SD",
+      "name": "svelte-app",
+      "type": "static",
+      "root": ".",
+      "branch": "main",
+      "build": {
+        "command": "npm run build",
+        "nodeVersion": "20",
+        "packageManager": "auto",
+        "outputDir": "dist"
+      },
+      "runtime": {
+        "port": 3000,
+        "fsGroup": 1001
+      }
+    },
+    "astro-app": {
+      "id": "svc_TWNXGE84I_NC",
+      "name": "astro-app",
+      "type": "static",
+      "root": ".",
+      "branch": "main",
+      "build": {
+        "command": "npm run build",
+        "nodeVersion": "20",
+        "packageManager": "auto",
+        "outputDir": "dist"
+      },
+      "runtime": {
+        "port": 3000,
+        "fsGroup": 1001
+      }
+    },
+    "nuxt-app": {
+      "id": "svc_fMF29LeLQ2IV",
+      "name": "nuxt-app",
+      "type": "web",
+      "root": ".",
+      "branch": "main",
+      "build": {
+        "command": "npm run build",
+        "nodeVersion": "20",
+        "packageManager": "auto",
+        "outputDir": ".output"
+      },
+      "runtime": {
+        "command": "npm run start",
+        "port": 3000,
+        "fsGroup": 1001
+      }
+    },
+    "sveltekit-app": {
+      "id": "svc_sefI5TZH7HYW",
+      "name": "sveltekit-app",
+      "type": "web",
+      "root": ".",
+      "branch": "main",
+      "build": {
+        "command": "npm run build",
+        "outputDir": "build"
+      },
+      "runtime": {
+        "command": "npm run preview",
         "port": 3000
       }
     }
   },
   "created": "2026-03-16T23:18:44.160Z",
-  "updated": "2026-03-16T23:59:28.713Z"
+  "updated": "2026-03-17T00:05:54.198Z"
 }
