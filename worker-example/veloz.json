@@ -1,9 +1,0 @@
-{
-  "type": "worker",
-  "build": {
-    "command": "echo 'No build needed'"
-  },
-  "runtime": {
-    "command": "npm start"
-  }
-}
